@@ -1,0 +1,28 @@
+<div class="container mt-4"> 
+  <form [formGroup]="valform">
+    <div class="mb-3">
+      <label for="exampleInputName" class="form-label">Name</label>
+      <input type="text" formControlName="Name" class="form-control mb-2 w-100" id="exampleInputName" >
+      <span *ngIf="valform.get('Name').invalid && valform.get('Name').touched"> Please Enter the Valid Input </span>
+    </div>    
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control mb-2 w-100" formControlName="Email" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <span *ngIf="valform.get('Email').invalid && valform.get('Email').touched"> Please Enter the Valid Email </span>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control mb-2 w-100" formControlName="Password" id="exampleInputPassword1">
+      <span *ngIf="valform.get('Password').invalid && valform.get('Password').touched"> Please Enter the Valid Password 
+        &nbsp;&nbsp;
+      <span> Password Must be Minimum Eight Characters, at least One Letter and One Number</span>
+    </span>
+  </div>
+    <div class="mb-3">
+      <label for="exampleInputPhone" class="form-label">Phone</label>
+      <input type="number" class="form-control mb-2 w-100" formControlName="Phone" id="exampleInputPhone" >
+      <span *ngIf="valform.get('Phone').invalid && valform.get('Phone').touched"> Please Enter the Valid Phone </span>
+    </div>  
+    <button type="submit" [disabled] = "valform.invalid" class="btn btn-primary w-100">Submit</button>
+  </form>
+</div>
